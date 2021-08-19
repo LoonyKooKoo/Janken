@@ -1,0 +1,119 @@
+*{
+    font-family: Lobster, Arial ;
+    color: maroon;
+    text-align: center;
+}
+html{
+    height: 100%;
+}
+body {
+background-color:rgb(22, 21, 21);
+height: 100%;
+display: flex;
+flex-flow: column nowrap;
+border:5px solid gray;
+justify-content: flex-start;
+align-items: stretch;
+justify-content: center;
+}
+
+img {
+    height: 75px;
+
+}
+h1{
+    margin: 0px 5px 0px 5px ;
+    
+
+}
+
+#header{
+    border:5px solid white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    flex-grow: 1;
+    align-items: center;
+  
+
+}
+
+#body{
+    border:5px solid pink;
+    flex-grow: 5;
+}
+.btn{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+input{
+    width: 100px;
+    height: 100px;
+    margin: 0px 20px 0px 20px;
+    
+}
+label{
+    font-family: Lobster, Arial ;
+    color: maroon;
+    text-align: center;
+}
+#rock-btn{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#paper-btn{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#scissors-btn{
+    display: flex;
+    flex-flow: column nowrap;
+}
+#app{
+    background-color: gray;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+#display{
+    display: flex;
+    flex-flow: column  nowrap;
+    justify-content: center;
+    flex-grow: 4;
+    align-items: center;
+
+}
+
+#input{
+    flex-grow: 1;
+}
+
+#screen{
+    background-color: black;
+    height: 350px;
+    width: 80%;
+    border: 5px solid darkgrey;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    
+
+}
+#scoreboard{
+    background-color: darkgrey;
+    width: 80%;
+    height: 50px;
+    border: 5px solid black;
+
+}
+
+#rst-btn{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+

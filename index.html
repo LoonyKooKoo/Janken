@@ -3,8 +3,6 @@
 <head>
   <title>Janken</title>
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-  <script src="code.js" defer>
-  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,9 +12,39 @@
   </div>
   <div id="body">
     <div id="app">
-      <div id="display"> </div>
-      <div id="input"> </div>
+      <div id="display"> 
+        <div id="scoreboard">
+          
+        </div>
+        <div id="screen">
+          <div id="winner-pic">
+          </div>
+          <div id="winner">
+          </div>
+        </div>
+      </div>
+      <div id="input"> 
+        <div class="btn">
+          <div id="rock-btn">
+            <input id="rock" type="image" src="/images/rock.jpeg" alt="rock">
+            <label for="rock">Rock</label>
+          </div>
+          <div id="paper-btn">
+            <input id="paper" type="image" src="/images/paper.jpg" alt="paper">
+            <label for="paper">Paper</label>
+          </div>
+          <div id="scissors-btn">
+            <input id="scissors" type="image" src="/images/scissors.jpeg" alt="scissors">
+            <label for="scissors">Scissors</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="rst-btn">
+      <button id="reset">Reset</button>
     </div>
   </div>
 </body>
 </html>
+<script src="code.js" >
+</script>

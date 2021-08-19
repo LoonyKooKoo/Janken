@@ -1,15 +1,36 @@
 let player = 0;
 let comp = 0;
+const score = document.querySelector('#scoreboard');
+const winnerImg  = document.querySelector('#winnner-pic');
+const winnerTxt = document.querySelector('#winner');
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
+const resetBtn = document.querySelector('#reset');
+const rockImg = document.createElement('img');
+const paperImg = document.createElement('img');
+const scissorsImg = document.createElement('img');
+rockImg.classList.add('compImg');
+paperImg.classList.add('compImg');
+scissorsImg.classList.add('compImg');
+rockImg.src = document.getElementById("rock").src;
+paperImg.src = document.getElementById("paper").src;
+scissorsImg.src = document.getElementById("scissors").src;
+
+
 function computerPlay() {
     switch(Math.floor(Math.random() * 3)) {
       case 0:
-        /*console.log("rock")*/
+        /*console.log("rock")
+        winnerImg.appendChild('rockImg')*/
         return "rock";
       case 1:
-       /*console.log("paper")*/
+       /*console.log("paper")
+       winnerImg.appendChild('paperImg');*/
         return "paper";
       case 2:
-       /*console.log("scissors")*/
+       /*console.log("scissors")
+       winnerImg.appendChild('scissorsImg');*/
         return "scissors";
     }
   }
@@ -49,25 +70,43 @@ function playRound(computerSelection, playerSelection) {
     }
     if ((p === c+1) || (p === c-2)){
         player++
-        return "You Win! " + playerSelection + " beats " + computerSelection;
+        winnerTxt.textContent = "You Win! " + playerSelection + " beats " + computerSelection;
+        scoreboard();
+        gameEndCases();
+        return;
     } else if (p === c) {
-        return "Draw! " + playerSelection + " on " + computerSelection;
+        winnerTxt.textContent = "Draw! " + playerSelection + " on " + computerSelection;
+        return;
     } else {
         comp++
-        return "You Lose! " + computerSelection + " beats " + playerSelection;
+        winnerTxt.textContent = "You Lose! " + computerSelection + " beats " + playerSelection;
+        scoreboard();
+        gameEndCases();
+        return;
     }
 }
 
-function game() {
+function gameEndCases() {
+        if (player === 5) {
+            winnerTxt.textContent = "Game over! Player Wins!";
+            return;
+        } else if (comp === 5){
+            winnerTxt.textContent =  "Game over! You Lose!";
+        }
+}
+
+function reset() {
     player = 0;
     comp = 0;
-    for (let i = 0; i<5; i++){
-        console.log(playRound(computerPlay(),prompt()));
-        console.log("Player: "+ player + " Computer: " + comp);
-        if (player === 3) {
-            return "Player Wins!"
-        } else if (comp === 3){
-            return "You Lose!"
-        }
-    }
+    scoreboard();
+    winnerTxt.textContent = "";
 }
+
+function scoreboard() {
+    score.textContent = "Player: "+ player + " Computer: " + comp;
+}
+
+rockBtn.addEventListener("click", function () { playRound(computerPlay(), "rock"); });
+paperBtn.addEventListener("click", function () { playRound(computerPlay(), "paper"); });
+scissorsBtn.addEventListener("click", function () { playRound(computerPlay(), "scissors"); });
+resetBtn.addEventListener( "click", reset);
